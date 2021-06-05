@@ -24,6 +24,12 @@ const App:FunctionComponent = ()=> {
     setTask("")
   }
 
+  const closeTask = (taskName: string):void =>{
+      setTodos(todos.filter((tarea:iTask) =>{ 
+        return tarea.task !== taskName
+      } ))
+  }
+
   return (
     <div className="App">
       <h1>To-Do List</h1>
@@ -36,7 +42,7 @@ const App:FunctionComponent = ()=> {
       </div>
       <div className="todoList">
           {todos.map((task: iTask, key: number)=>{
-            return <TodoTask key={key} task={task} />
+            return <TodoTask key={key} task={task} closeTask={closeTask} />
           })}    
       </div>
     </div>
