@@ -3,7 +3,7 @@ import { iTask } from '../interfaces'
 
 interface props{
     task: iTask;
-    closeTask(name:string): void
+    closeTask(name:string): void;
 }
 
 const TodoTask = ({task, closeTask}:props)=> {
